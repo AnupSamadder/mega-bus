@@ -62,20 +62,22 @@
             <div class="inputs">
                 <div class="input-group f-class">
                 <div>
-                    <label for="">First Class ($150)</label>
-                    <input id="ticket-quantity" class="inp-style inp-width" type="number" name=""  value="1">
+                    <label id="ticket-price" for="">First Class ($150)</label>
+                    <input id="ticket-quantity" class="inp-style inp-width" type="number" name=""  value="0">
                 </div>
                 <div class="plus-minus-btn">
-                    <p id="plus-button">+ -</p>
+                    <p id="plus-button">+</p>
+                    <p id="minus-button">-</p>
                 </div>
             </div>
                 <div class="input-group f-class">
                     <div>
                         <label for="">Economy ($100)</label>
-                        <input class="inp-style inp-width" type="number" name="">
+                        <input id="ticket-count" class="inp-style inp-width" type="number" name="" value="0">
                     </div>
                     <div class="plus-minus-btn">
-                        <p> <span>+</span> <span>-</span> </p>
+                        <p id="plus-btn">+</p>
+                        <p id="minus-btn">-</p>
                     </div>
                 </div>
 
@@ -83,10 +85,10 @@
             <div class="calculations">
                 <div class="amount">
                     <div class="left">
-                        <p>Subtotal</p>
+                        <p> Subtotal</p>
                     </div>
                     <div class="right">
-                        <p>$500</p>
+                        <p>$500 </p>
                     </div>
                 </div>
 
@@ -114,12 +116,54 @@
 
     <!--Thank You-->
     <script>
+        // First Class Plus Button
         document.getElementById("plus-button").addEventListener("click", function(){
          let ticketInput= document.getElementById("ticket-quantity");
          let ticketQuantity = parseInt(ticketInput.value);
          let ticketNewQuantity = ticketQuantity + 1;
          ticketInput.value = ticketNewQuantity;
+        let ticketTotal = ticketNewQuantity * 150;
+
+        
+
         })
+
+        // First Class Minus Button
+        document.getElementById("minus-button").addEventListener("click", function(){
+        let ticketInput = document.getElementById("ticket-quantity");
+        let ticketQuantity = parseInt(ticketInput.value);
+        let ticketNewQuantity = ticketQuantity - 1;
+        ticketInput.value = ticketNewQuantity;
+        let ticketTotal = ticketNewQuantity * 150;
+
+
+
+        })
+
+        // Economy Class Plus Button
+        document.getElementById("plus-btn").addEventListener("click", function(){
+        let ticketInput = document.getElementById("ticket-count");
+        let ticketCount = parseInt(ticketInput.value);
+        let ticketNewCount = ticketCount + 1;
+        ticketInput.value = ticketNewCount;
+        let ticketTotal = ticketCount * 100; 
+
+
+        })
+        
+        //  Economy Class Minus Button
+        document.getElementById("minus-btn").addEventListener("click", function(){
+        let ticketInput = document.getElementById("ticket-count");
+        let ticketCount = parseInt(ticketInput.value);
+        let ticketNewCount = ticketCount - 1;
+        ticketInput.value = ticketNewCount;
+        let ticketTotal = ticketNewCount * 100;
+
+
+        })
+        
+
+
     </script>
 </body>
 
