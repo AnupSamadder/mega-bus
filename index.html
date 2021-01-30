@@ -88,7 +88,7 @@
                         <p> Subtotal</p>
                     </div>
                     <div class="right">
-                        <p>$500 </p>
+                        <p id="sub-total">$500 </p>
                     </div>
                 </div>
 
@@ -122,8 +122,9 @@
          let ticketQuantity = parseInt(ticketInput.value);
          let ticketNewQuantity = ticketQuantity + 1;
          ticketInput.value = ticketNewQuantity;
-        let ticketTotal = ticketNewQuantity * 150;
-
+        let firstTotal = ticketNewQuantity * 150;
+        
+        
         
 
         })
@@ -134,9 +135,9 @@
         let ticketQuantity = parseInt(ticketInput.value);
         let ticketNewQuantity = ticketQuantity - 1;
         ticketInput.value = ticketNewQuantity;
-        let ticketTotal = ticketNewQuantity * 150;
+        let firstTotal = ticketNewQuantity * 150;
 
-
+        
 
         })
 
@@ -146,7 +147,7 @@
         let ticketCount = parseInt(ticketInput.value);
         let ticketNewCount = ticketCount + 1;
         ticketInput.value = ticketNewCount;
-        let ticketTotal = ticketNewCount * 100; 
+        let economyTotal = ticketNewCount * 100; 
 
 
         })
@@ -157,10 +158,14 @@
         let ticketCount = parseInt(ticketInput.value);
         let ticketNewCount = ticketCount - 1;
         ticketInput.value = ticketNewCount;
-        let ticketTotal = ticketNewCount * 100;
+        let economyTotal = ticketNewCount * 100;
 
 
         })
+
+        //  Subtotal  
+        document.getElementById("sub-total").innerText;
+        let subTotal  = firstTotal * 150 + economyTotal * 100;
         
 
 
